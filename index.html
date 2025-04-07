@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFAR Robot Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- 圆形按钮 -->
+    <div class="chat-toggle" onclick="toggleChat()">
+        <span id="toggle-icon">💬</span>
+    </div>
+
+    <!-- 对话框 -->
+    <div id="chat-container" class="chat-container hidden">
+        <div class="chat-header">
+            <h1>CFAR Robot</h1>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Ask CFAR Robot..." autocomplete="off">
+            <button class="upload-icon" aria-label="Attach File">📎
+    </button>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- 结果显示区域 -->
+    <div id="result" class="result-box hidden"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
